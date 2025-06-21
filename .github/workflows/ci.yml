@@ -2,23 +2,59 @@ name: CI Test with Docker Compose
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
+    services:
+      db:
+        image: postgres:15
+        env:
+          POSTGRES_DB: flaskdb
+          POSTGRES_USER: flaskuser
+          POSTGRES_PASSWORD: secret123
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+      web:
+        image: devops-hello-web
+        build:
+          context: .
+        ports:
+          - 5000:5000
+        options: >-
+          --health-cmd "curl --fail http://localhost:5000/health || exit 1"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 10
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Docker Compose
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y docker-compose
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
 
-      - name: Run Tests
+      - name: Install test dependencies
+        run: pip install -r requirements-test.txt
+
+      - name: Wait for web to be healthy
         run: |
-          docker-compose up --build --abort-on-container-exit test
+          for i in {1..10}; do
+            curl http://localhost:5000/health && break
+            echo "Waiting for web..."
+            sleep 5
+          done
+
+      - name: Run tests
+        run: pytest
