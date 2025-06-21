@@ -24,18 +24,6 @@ jobs:
           --health-timeout 5s
           --health-retries 5
 
-      web:
-        image: devops-hello-web
-        build:
-          context: .
-        ports:
-          - 5000:5000
-        options: >-
-          --health-cmd "curl --fail http://localhost:5000/health || exit 1"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 10
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -47,6 +35,20 @@ jobs:
 
       - name: Install test dependencies
         run: pip install -r requirements-test.txt
+
+      - name: Build Docker image for web
+        run: docker build -t devops-hello-web .
+
+      - name: Run web container
+        run: |
+          docker run -d --name web \
+            --network host \
+            -e DATABASE_HOST=localhost \
+            -e DATABASE_PORT=5432 \
+            -e DATABASE_NAME=flaskdb \
+            -e DATABASE_USER=flaskuser \
+            -e DATABASE_PASSWORD=secret123 \
+            -p 5000:5000 devops-hello-web
 
       - name: Wait for web to be healthy
         run: |
