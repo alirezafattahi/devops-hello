@@ -1,0 +1,24 @@
+name: CI Test with Docker Compose
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+
+      - name: Run Tests
+        run: |
+          docker-compose up --build --abort-on-container-exit test
