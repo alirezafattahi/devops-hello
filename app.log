@@ -1,0 +1,51 @@
+2025-06-21 20:46:49,889 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2025-06-21 20:46:49,890 [INFO] [33mPress CTRL+C to quit[0m
+2025-06-21 20:46:49,891 [INFO]  * Restarting with stat
+2025-06-21 20:46:50,313 [WARNING]  * Debugger is active!
+2025-06-21 20:46:50,313 [INFO]  * Debugger PIN: 507-058-579
+2025-06-21 20:46:53,648 [INFO] 172.18.0.1 - - [21/Jun/2025 20:46:53] "GET / HTTP/1.1" 200 -
+2025-06-21 20:46:53,863 [INFO] 172.18.0.1 - - [21/Jun/2025 20:46:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-21 20:46:59,498 [INFO] Visit from 172.18.0.1
+2025-06-21 20:46:59,514 [INFO] 172.18.0.1 - - [21/Jun/2025 20:46:59] "GET /visit HTTP/1.1" 200 -
+2025-06-21 20:50:46,236 [INFO] Visit from 172.18.0.1
+2025-06-21 20:50:46,293 [INFO] 172.18.0.1 - - [21/Jun/2025 20:50:46] "GET /visit HTTP/1.1" 200 -
+2025-06-21 20:51:56,318 [INFO]  * Detected change in '/app/app.py', reloading
+2025-06-21 20:51:56,416 [INFO]  * Restarting with stat
+2025-06-21 20:51:56,807 [WARNING]  * Debugger is active!
+2025-06-21 20:51:56,808 [INFO]  * Debugger PIN: 507-058-579
+2025-06-21 20:52:06,180 [INFO] 172.18.0.1 - - [21/Jun/2025 20:52:06] "[35m[1mGET /health HTTP/1.1[0m" 500 -
+2025-06-21 20:52:06,262 [INFO] 172.18.0.1 - - [21/Jun/2025 20:52:06] "GET /health?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-06-21 20:52:06,265 [INFO] 172.18.0.1 - - [21/Jun/2025 20:52:06] "GET /health?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-06-21 20:52:06,324 [INFO] 172.18.0.1 - - [21/Jun/2025 20:52:06] "GET /health?__debugger__=yes&cmd=resource&f=console.png&s=L6H7MwuutS7lIZsJoRct HTTP/1.1" 200 -
+2025-06-21 20:52:06,344 [INFO] 172.18.0.1 - - [21/Jun/2025 20:52:06] "GET /health?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-06-21 20:52:23,280 [INFO]  * Detected change in '/app/app.py', reloading
+2025-06-21 20:52:23,369 [INFO]  * Restarting with stat
+2025-06-21 20:52:23,758 [WARNING]  * Debugger is active!
+2025-06-21 20:52:23,758 [INFO]  * Debugger PIN: 507-058-579
+2025-06-21 20:52:26,913 [INFO] 172.18.0.1 - - [21/Jun/2025 20:52:26] "GET /health HTTP/1.1" 200 -
+2025-06-21 20:52:54,303 [INFO]  * Detected change in '/app/app.py', reloading
+2025-06-21 20:52:54,402 [INFO]  * Restarting with stat
+2025-06-21 20:52:54,882 [WARNING]  * Debugger is active!
+2025-06-21 20:52:54,882 [INFO]  * Debugger PIN: 507-058-579
+2025-06-21 20:53:12,225 [INFO]  * Detected change in '/app/app.py', reloading
+2025-06-21 20:53:12,337 [INFO]  * Restarting with stat
+2025-06-21 20:53:12,730 [WARNING]  * Debugger is active!
+2025-06-21 20:53:12,731 [INFO]  * Debugger PIN: 507-058-579
+2025-06-21 20:53:18,448 [INFO] Health check called
+2025-06-21 20:53:18,449 [INFO] 172.18.0.1 - - [21/Jun/2025 20:53:18] "GET /health HTTP/1.1" 200 -
+2025-06-21 21:16:30,661 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2025-06-21 21:16:30,661 [INFO] [33mPress CTRL+C to quit[0m
+2025-06-21 21:16:30,662 [INFO]  * Restarting with stat
+2025-06-21 21:16:31,066 [WARNING]  * Debugger is active!
+2025-06-21 21:16:31,067 [INFO]  * Debugger PIN: 466-037-225
+2025-06-21 21:18:41,688 [INFO] Health check called
+2025-06-21 21:18:41,690 [INFO] 172.18.0.1 - - [21/Jun/2025 21:18:41] "GET /health HTTP/1.1" 200 -
+2025-06-21 21:18:41,787 [INFO] 172.18.0.1 - - [21/Jun/2025 21:18:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-21 21:18:46,863 [INFO] Visit from 172.18.0.1
+2025-06-21 21:18:46,875 [INFO] 172.18.0.1 - - [21/Jun/2025 21:18:46] "GET /visit HTTP/1.1" 200 -
